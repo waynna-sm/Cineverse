@@ -1,0 +1,764 @@
+
+/* =====================================
+   CINEVERSE - IDENTIDADE VISUAL
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --fundo: #090b12;
+    --fundo-card: #141827;
+    --fundo-claro: #1c2233;
+    --vermelho: #e5093c;
+    --roxo: #9b5cff;
+    --branco: #f4f0ea;
+    --cinza: #a5a8b5;
+    --borda: rgba(255,255,255,.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--branco);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* MENU */
+
+header {
+    height: 82px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(9,11,18,.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: var(--vermelho);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.menu a {
+    color: var(--cinza);
+    font-size: 14px;
+    transition: .3s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+    color: white;
+}
+
+.menu a.ativo::after {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--vermelho);
+    margin-top: 4px;
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    color: white;
+    background: none;
+    font-size: 27px;
+}
+
+/* ELEMENTOS GERAIS */
+
+.container {
+    width: 84%;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.secao {
+    padding: 90px 0;
+}
+
+.tag {
+    display: inline-block;
+    color: #ff6b8c;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.titulo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.descricao {
+    color: var(--cinza);
+    max-width: 600px;
+    font-size: 15px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 25px;
+    background: var(--vermelho);
+    border: 1px solid var(--vermelho);
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.botao:hover {
+    background: #bd0732;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(229,9,60,.25);
+}
+
+.botao-secundario {
+    background: transparent;
+    border-color: rgba(255,255,255,.3);
+}
+
+.botao-secundario:hover {
+    background: white;
+    color: #111;
+}
+
+/* HERO DA HOME */
+
+.hero {
+    min-height: 630px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(90deg, #090b12 0%, rgba(9,11,18,.91) 38%, rgba(9,11,18,.15) 100%),
+        linear-gradient(0deg, #090b12 0%, transparent 35%),
+        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=85')
+        center/cover;
+}
+
+.hero-conteudo {
+    width: 84%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 80px 0;
+}
+
+.hero h1 {
+    max-width: 700px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(45px, 7vw, 82px);
+    line-height: 1.02;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--vermelho);
+}
+
+.hero p {
+    color: #c3c3cc;
+    max-width: 510px;
+    margin-bottom: 30px;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* CARDS DE FILMES */
+
+.grade-filmes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.filme-card {
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.filme-card:hover {
+    transform: translateY(-9px);
+    border-color: rgba(229,9,60,.6);
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+}
+
+.filme-card img {
+    display: block;
+    width: 100%;
+    height: 340px;
+    object-fit: contain;
+    object-position: center;
+    background: #090b12;
+}
+
+.filme-card:hover img {
+    transform: scale(1.04);
+}
+
+.filme-info {
+    padding: 18px;
+}
+
+.filme-info h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 6px;
+}
+
+.filme-info p {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.nota {
+    display: inline-block;
+    color: #ffc857;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+/* BANNER */
+
+.banner {
+    padding: 65px;
+    border-radius: 12px;
+    background:
+        linear-gradient(90deg, rgba(14,12,29,.96), rgba(47,20,70,.65)),
+        url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=1400&q=80')
+        center/cover;
+    border: 1px solid var(--borda);
+}
+
+.banner h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 37px;
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+
+/* PÁGINA DE FILMES */
+
+.topo-pagina {
+    padding: 90px 8% 55px;
+    background: linear-gradient(120deg, #171329, #090b12 75%);
+}
+
+.topo-pagina h1 {
+    font: 700 clamp(40px, 6vw, 65px) 'Space Grotesk';
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.filtro-btn {
+    border: 1px solid var(--borda);
+    color: var(--cinza);
+    background: var(--fundo-card);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+    background: var(--vermelho);
+    color: white;
+    border-color: var(--vermelho);
+}
+
+.busca {
+    width: 100%;
+    max-width: 400px;
+    padding: 13px 18px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background: var(--fundo-card);
+    color: white;
+    outline: none;
+}
+
+.busca:focus {
+    border-color: var(--vermelho);
+}
+
+/* TABELA */
+
+.tabela-wrapper {
+    overflow-x: auto;
+    margin-top: 30px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    background: var(--fundo-card);
+    text-align: left;
+}
+
+th, td {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--borda);
+}
+
+th {
+    color: #ff6b8c;
+    background: #1c2030;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    color: #d5d5df;
+    font-size: 14px;
+}
+
+tr:hover td {
+    background: rgba(255,255,255,.035);
+}
+
+/* CONTATO */
+
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.contato-info {
+    padding: 30px;
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+}
+
+.contato-info h3 {
+    font: 600 25px 'Space Grotesk';
+    margin-bottom: 15px;
+}
+
+.contato-info p {
+    color: var(--cinza);
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: grid;
+    gap: 17px;
+}
+
+.campo {
+    display: grid;
+    gap: 7px;
+}
+
+.campo label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+    width: 100%;
+    padding: 14px;
+    background: var(--fundo-card);
+    color: white;
+    border: 1px solid var(--borda);
+    border-radius: 5px;
+    outline: none;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+    border-color: var(--vermelho);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.erro {
+    color: #ff6b8c;
+    font-size: 12px;
+}
+
+.sucesso {
+    color: #60e6a1;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.mapa {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #06070c;
+    border-top: 1px solid var(--borda);
+    padding: 35px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer p {
+    color: var(--cinza);
+    font-size: 12px;
+}
+
+footer a {
+    color: #ff6b8c;
+}
+
+/* ANIMAÇÃO */
+
+.revelar {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: .7s ease;
+}
+
+.revelar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .grade-filmes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0 6%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #10131e;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .menu.aberto {
+        display: flex;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .grade-filmes {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .filme-card img {
+        height: 260px;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .filme-info {
+        padding: 12px;
+    }
+
+    .filme-info h3 {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .banner {
+        padding: 30px 22px;
+    }
+
+    .banner h2 {
+        font-size: 28px;
+    }
+
+    .secao {
+        padding: 60px 0;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+    
+/* =====================================
+   DETALHES DO FILME
+===================================== */
+
+.detalhe-hero {
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+        linear-gradient(90deg, #090b12 5%, rgba(9,11,18,.85) 55%, rgba(9,11,18,.35)),
+        linear-gradient(0deg, #090b12, transparent 45%),
+        url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1800')
+        center/cover;
+}
+
+.detalhe-conteudo {
+    max-width: 720px;
+}
+
+.detalhe-conteudo h1 {
+    font: 700 clamp(45px, 7vw, 78px) 'Space Grotesk';
+    line-height: 1;
+    margin: 15px 0 20px;
+}
+
+.detalhe-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: var(--cinza);
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.detalhe-meta span {
+    border-right: 1px solid var(--borda);
+    padding-right: 15px;
+}
+
+.detalhe-descricao {
+    color: #c4c5ce;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.detalhe-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.poster-detalhe {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+
+.ficha-tecnica {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.ficha-item {
+    padding: 18px;
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+}
+
+.ficha-item span {
+    display: block;
+    color: var(--cinza);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.ficha-item strong {
+    font-size: 15px;
+}
+
+/* TRAILER */
+
+.trailer-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--borda);
+    background: #000;
+    box-shadow: 0 15px 45px rgba(0,0,0,.35);
+}
+
+.trailer-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.elenco-grade {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.elenco-card {
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    padding: 20px 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.elenco-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.elenco-card span {
+    color: var(--cinza);
+    font-size: 12px;
+}
+
+@media(max-width:700px) {
+    .detalhe-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .poster-detalhe {
+        max-width: 260px;
+    }
+
+    .elenco-grade {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ficha-tecnica {
+        grid-template-columns: 1fr 1fr;
+    }
+
+   .detalhe-hero {
+    min-height: 490px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #090b12 5%,
+            rgba(9,11,18,.85) 55%,
+            rgba(9,11,18,.35)
+        ),
+        linear-gradient(
+            0deg,
+            #090b12,
+            transparent 45%
+        ),
+        url('https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg')
+        center 30% / cover;
+}
+
+}
+/* GARANTE A EXIBIÇÃO DOS CARDS DURANTE A ANIMAÇÃO */
+.filme-card.revelar {
+    opacity: 1;
+    transform: none;
+}
