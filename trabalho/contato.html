@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | CINEVERSE</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo">CINE<span>VERSE.</span></a>
+
+    <button class="menu-btn" aria-label="Abrir menu">☰</button>
+
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="filmes.html">Explorar filmes</a>
+        <a href="contato.html" class="ativo">Contato</a>
+    </nav>
+</header>
+
+<main>
+
+    <section class="topo-pagina">
+        <span class="tag">VAMOS CONVERSAR?</span>
+
+        <h1>Todo grande filme<br>começa com uma ideia.</h1>
+
+        <p class="descricao">
+            Tem uma sugestão, dúvida ou quer compartilhar
+            sua paixão pelo cinema? Estamos prontos para ouvir você.
+        </p>
+    </section>
+
+    <section class="secao container">
+
+        <div class="contato-grid">
+
+            <!-- INFORMAÇÕES -->
+            <div class="revelar">
+
+                <span class="tag">FALE COM A GENTE</span>
+
+                <h2 class="titulo">Sua opinião<br>faz parte da história.</h2>
+
+                <p class="descricao" style="margin-bottom:30px;">
+                    O CINEVERSE é feito para pessoas que amam
+                    cinema. Envie suas sugestões e ajude a
+                    construir uma experiência ainda melhor.
+                </p>
+
+                <div class="contato-info">
+
+                    <h3>🎬 CINEVERSE</h3>
+
+                    <p>
+                        Um espaço dedicado a quem vive,
+                        respira e se emociona com o cinema.
+                    </p>
+
+                    <p>📍 Região de Praia Grande – SP</p>
+
+                    <p>✉️ contato@cineverse.com</p>
+
+                    <p>🌐 www.cineverse.com</p>
+
+                    <a href="filmes.html" class="botao" style="margin-top:10px;">
+                        Explorar filmes →
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- FORMULÁRIO -->
+            <div class="revelar">
+
+                <span class="tag">ENVIE SUA MENSAGEM</span>
+
+                <h2 class="titulo">Vamos começar?</h2>
+
+                <form id="formContato" class="formulario" novalidate>
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Como podemos chamar você?"
+                            autocomplete="name"
+                        >
+                        <span class="erro" id="erroNome"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="seuemail@exemplo.com"
+                            autocomplete="email"
+                        >
+                        <span class="erro" id="erroEmail"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="assunto">Assunto</label>
+
+                        <select id="assunto">
+                            <option value="">Selecione um assunto</option>
+                            <option value="Sugestão">Sugestão de filme</option>
+                            <option value="Dúvida">Dúvidas</option>
+                            <option value="Parceria">Parcerias</option>
+                            <option value="Outro">Outro assunto</option>
+                        </select>
+
+                        <span class="erro" id="erroAssunto"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">Sua mensagem</label>
+
+                        <textarea
+                            id="mensagem"
+                            placeholder="Conte para nós o que está pensando..."
+                        ></textarea>
+
+                        <span class="erro" id="erroMensagem"></span>
+                    </div>
+
+                    <button type="submit" class="botao">
+                        Enviar mensagem →
+                    </button>
+
+                    <p id="resposta" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GOOGLE MAPS -->
+    <section class="secao container revelar">
+
+        <span class="tag">NOSSA REGIÃO</span>
+
+        <h2 class="titulo">O cinema está<br>por toda parte.</h2>
+
+        <p class="descricao">
+            Explore os cinemas e espaços de exibição
+            próximos de Praia Grande, São Paulo.
+        </p>
+
+        <iframe
+            class="mapa"
+            src="https://www.google.com/maps?q=cinemas+em+Praia+Grande+SP&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            title="Mapa de cinemas em Praia Grande">
+        </iframe>
+
+        <p style="margin-top:12px; color:var(--cinza); font-size:12px;">
+            Mapa incorporado do Google Maps.
+        </p>
+
+    </section>
+
+</main>
+
+<footer>
+    <a href="index.html" class="logo">CINE<span>VERSE.</span></a>
+
+    <p>© <span class="ano"></span> CINEVERSE. Todos os direitos reservados.</p>
+
+    <a href="index.html">Voltar ao início ↑</a>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
